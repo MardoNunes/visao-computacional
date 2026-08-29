@@ -1,8 +1,0 @@
-# Ambientes virtuais Python
-venv/
-.venv/
-env/
-.env/
-
-# o proprio
-.gitignore
