@@ -16,7 +16,7 @@ imagemRgb = cv2.cvtColor(imagem, cv2.COLOR_BGR2RGB)
 # convertendo para cinza
 imagemCinza = cv2.cvtColor(imagem, cv2.COLOR_BGR2GRAY)
 tamanho = (512, 512)
-imagemCinza = cv2.resize(imagemCinza, tamanho, interpolation=cv2.INTER_LINEAR)
+imagemCinza = cv2.resize(imagemCinza, tamanho, interpolation=cv2.INTER_LINEAR) # redimensiona o tamanho da imagem
 
 # isso daqui instancia a imagem
 cv2.imshow('Teste', imagemCinza)

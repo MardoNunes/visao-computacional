@@ -3,3 +3,6 @@ venv/
 .venv/
 env/
 .env/
+
+# o proprio
+.gitignore
