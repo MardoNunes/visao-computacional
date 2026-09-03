@@ -26,12 +26,15 @@ kernelH = np.array([
     [-1, -2, -1]
 ], dtype=np.float32)
 
+
+# escala 5x5
 kernelH5 = np.array([
     [1, 2, 1, 2, 1],
     [0, 0, 0, 0, 0],
     [-1, -2, -1, -2, -1]
 ], dtype=np.float32)
 
+# escala 11x11
 kernelH11 = np.array([
     [1, 2, 2, 1, 1, 1, 1, 1, 2, 2, 1],
     [0, 0, 0, 0, 0, 0, 0, 0, 0 , 0, 0],
