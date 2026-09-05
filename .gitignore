@@ -1,0 +1,5 @@
+#ignora venv do python
+venv/
+
+#ignora os bancos de imagens 
+img/
