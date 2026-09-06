@@ -122,7 +122,7 @@ for idx, escala_1 in enumerate(imagens_prontas):
 print(f"Treinando K-Means com {len(lista_com_todos_os_vetores)} vetores...")
 matriz_vetores = np.array(lista_com_todos_os_vetores) #Como o kmeans recebe uma matriz, colocamos os vetores numa matriz
 
-# Aplicação da normalização global (média 0, desvio padrão 1)
+# Aplica normalização global (média 0, desvio padrão 1)
 padronizador = StandardScaler()
 matriz_normalizada = padronizador.fit_transform(matriz_vetores)
 
