@@ -127,7 +127,7 @@ padronizador = StandardScaler()
 matriz_normalizada = padronizador.fit_transform(matriz_vetores)
 
 #Parametros do algoritmo de clustering, que vai fazer o agrupamento dos vetores de caracteristicas
-kmeans = KMeans(n_clusters=5, random_state=42) 
+kmeans = KMeans(n_clusters=6, random_state=42) 
 kmeans.fit(matriz_normalizada)
 grupos_globais = kmeans.labels_
 
