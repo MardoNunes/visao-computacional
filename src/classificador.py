@@ -4,7 +4,7 @@ import numpy as np
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 
-# =============== PRE PROCESSAMENTO ===============
+# PRE PROCESSAMENTO 
 
 diretorio_script = os.path.dirname(os.path.abspath(__file__))           #caminho atual
 pasta_origem = os.path.join(diretorio_script, '../img')                 #pasta com as imagens originais
@@ -42,7 +42,7 @@ if len(imagens_prontas) == 0:
     exit()
 
 
-# =============== DEFINE DOS KERNELS ===============
+# DEFINE DOS KERNELS
 kernel_h = np.array([[-1, -2, -1], [ 0,  0,  0], [ 1,  2,  1]])
 kernel_v = np.array([[-1,  0,  1], [-2,  0,  2], [-1,  0,  1]])
 kernel_45 = np.array([[ 0,  1,  2], [-1,  0,  1], [-2, -1,  0]])
@@ -58,7 +58,7 @@ def aplicar_filtros(imagem):
         'c': np.abs(cv2.filter2D(imagem, cv2.CV_64F, kernel_c))
     }
 
-# =============== EXTRACAO DE CARACTERISTICAS ===============
+# EXTRACAO DE CARACTERISTICAS 
 
 #vetores de caracteristicas das imagens
 lista_com_todos_os_vetores = []
@@ -118,7 +118,7 @@ for idx, escala_1 in enumerate(imagens_prontas):
             # Agrupa os valores no vetor
             lista_com_todos_os_vetores.append(v1 + v2 + v3)
 
-# =============== AGRUPAMENTO K-MEANS GLOBAL ===============
+# AGRUPAMENTO K-MEANS 
 print(f"Treinando K-Means com {len(lista_com_todos_os_vetores)} vetores...")
 matriz_vetores = np.array(lista_com_todos_os_vetores) #Como o kmeans recebe uma matriz, colocamos os vetores numa matriz
 
@@ -131,11 +131,8 @@ kmeans = KMeans(n_clusters=6, random_state=42)
 kmeans.fit(matriz_normalizada)
 grupos_globais = kmeans.labels_
 
-# =============== PINTURA E SALVAMENTO DE ARQUIVOS ===============
 
-# ================================================================
 # Grupo de cores com varias cores para testar varios numeros de K do kmeans
-# ================================================================
 cores_dos_grupos = [
     (0, 0, 255),      # 0: Vermelho
     (0, 255, 0),      # 1: Verde
