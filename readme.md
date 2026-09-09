@@ -8,11 +8,27 @@ Para executar o pipeline, o ambiente Python deve conter as seguintes bibliotecas
 *   `opencv-python` (cv2): Manipulação de matrizes de imagem e convoluções.
 *   `numpy`: Operações matemáticas e manipulação de vetores de alta performance.
 *   `scikit-learn`: Execução do algoritmo de agrupamento K-Means e normalização estatística dos dados.
-
+* Criando um ambiente python:
+    ```bash
+    python3 -m venv venv
+    ```
+* Acessando ao ambiente:
+  ```bash
+    source venv/bin/activate
+  ```
+* Instalando as dependências:
+    ```bash
+    pip install opencv-python && scikit-learn
+    ```
+Agora basta executar o classificador.py com as imagens presentes em `/img`.
+* Para sair do ambiente virtual
+    ```bash
+    deactivate
+    ```
 ## Estrutura de Diretórios
 
 O script foi arquitetado para rodar em lote e exige uma hierarquia de pastas específica, baseada no caminho de execução do arquivo `classificador.py`:
-*   `../img/`: Diretório de origem. O usuário deve depositar as imagens a serem analisadas nesta pasta antes da execução.
+*   `../img/`: Diretório de origem. Aqui você deve depositar as imagens a serem analisadas nesta pasta antes da execução.
 *   `../img_proc/`: Diretório gerado automaticamente. Armazena as cópias das imagens padronizadas (escala de cinza e 512x512 pixels) utilizadas pelo pipeline.
 *   `../img_resultados/`: Diretório gerado automaticamente. Recebe o output final do sistema: as imagens originais sobrepostas pela malha de cores que representam os clusters segmentados.
 
