@@ -7,11 +7,6 @@ tabuleiro de xadrez, usando o método clássico de Zhang (2000) e a OpenCV.
 **Resultado:** erro médio de reprojeção de **1,66 px** com 4 imagens (196
 correspondências).
 
-## Como rodar
-
-```bash
-venv/bin/python src/main.py
-```
 
 Lê `img/*.jpg` e grava as imagens de resultado em `calibracao_resultados/`.
 
@@ -41,17 +36,6 @@ K = [[3379.70,    0.00,  883.74],      k = (k1, k2, p1, p2, k3)
 
 RMS global: 1,92 px — por imagem: `1.jpg` 0,94 · `5.jpg` 1,68 · `6.jpg` 1,61 · `8.jpg` 2,41.
 
-## Relatório
-
-`relatorio.tex` — artigo SBC uma coluna (3 páginas, em português).
-
-```bash
-pdflatex relatorio.tex && pdflatex relatorio.tex
-```
-
-Usa `sbclatex.cls` se o modelo oficial da SBC estiver disponível; senão compila
-com um `article` de diagramação equivalente. As figuras de `figs/` são cópias
-reduzidas das de `calibracao_resultados/`.
 
 ## Estrutura
 
@@ -59,8 +43,7 @@ reduzidas das de `calibracao_resultados/`.
 src/main.py             pipeline completo
 img/                    fotos do tabuleiro (entradas)
 calibracao_resultados/  saídas (geradas pelo script)
-figs/                   figuras reduzidas usadas no relatório
-relatorio.tex           artigo LaTeX
+
 ```
 ## Para Testar
 ```bash
