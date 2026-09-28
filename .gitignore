@@ -1,1 +1,7 @@
 /venv
+
+# artefatos de compilação do relatório
+*.aux
+*.log
+*.out
+missfont.log
