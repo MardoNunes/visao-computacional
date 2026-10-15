@@ -28,7 +28,7 @@ Reprodutibilidade: semente fixa `SEED = 42` e divisão estratificada 80% treino 
 
 ## Como funciona (resumo)
 
-1. **Carga:** `load_iris()` (mesmos dados da UCI) em DataFrame com as 4 medidas.
+1. **Carga:** `iris.data` dataset abaixado de: https://archive.ics.uci.edu/dataset/53/iris 
 2. **Padronização:** `StandardScaler` ajustado só no treino, aplicado no teste.
 3. **PCA:** `cv2.PCACompute2` nos dados padronizados (PC1 73,0% + PC2 22,9% ≈ 95,8% da variância).
 4. **K-NN:** distância Euclidiana + voto majoritário entre os `k` vizinhos.
@@ -46,12 +46,3 @@ Reprodutibilidade: semente fixa `SEED = 42` e divisão estratificada 80% treino 
 | `06_escolha_k.png` | Acurácia média do 5-fold por `k`, com barra de desvio entre folds | Pico em `k = 3` (linha tracejada); `k` grande demais derruba a acurácia |
 | `06_fronteiras_knn_pca.png` | Fronteiras de decisão do K-NN (`k = 3`) no plano PCA | Fundo colorido = classe prevista; círculos = treino, estrelas = teste. Estrela fora da cor da sua classe = erro (2 casos na fronteira laranja/verde) |
 
-## Relatório
-
-O relatório completo está em `main.tex` (compilar com LaTeX usando o template SBC). Ele segue a mesma estrutura da atividade anterior (Introdução → Metodologia → Resultados → Conclusão) e explica cada gráfico acima em texto, sem foco em fórmulas.
-
-## Referências
-
-- Base Iris (UCI): https://archive.ics.uci.edu/dataset/53/iris
-- `cv2.ml.KNearest`: https://docs.opencv.org/4.x/dd/de1/classcv_1_1ml_1_1KNearest.html
-- `load_iris` (scikit-learn): https://scikit-learn.org/stable/datasets/toy_dataset.html
